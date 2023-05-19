@@ -15,7 +15,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Цена рынка ₽</label>
-            <input type="number" class="form-control" placeholder="Введите цену хранения на рынке" name="market" value="{{ old('dollar') }}">
+            <input type="number" class="form-control" placeholder="Введите цену хранения на рынке" name="market" value="{{ old('market') }}">
         </div>
         <div class="mb-3">
             <label class="form-label">Цена доставки ₽</label>

@@ -39,9 +39,14 @@ class SuppliesController extends Controller
         return view('supplies.show', compact('supply'));
     }
 
+    public function edit(Supply $supply)
+    {
+        return view('supplies.edit', compact('supply'));
+    }
+
     public function update(Request $request, Supply $supply)
     {
-        $request->validate([
+        $attribute = $request->validate([
             'dollar' => ['required', 'numeric'],
             'cargo' => ['required', 'integer'],
             'market' => ['required', 'integer'],
@@ -49,15 +54,15 @@ class SuppliesController extends Controller
             'date' => ['required', 'date'],
         ]);
 
-        $supply->update($request->validated());
+        $supply->update($attribute);
 
-        return $supply;
+        return redirect('/supplies');
     }
 
     public function destroy(Supply $supply)
     {
         $supply->delete();
 
-        return response()->json();
+        return redirect('/supplies');
     }
 }
