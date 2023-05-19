@@ -6,19 +6,19 @@
     <form method="POST" action="/supplies">
         @csrf
         <div class="mb-3">
-            <label class="form-label">Курс доллара</label>
+            <label class="form-label">Курс доллара ₽</label>
             <input type="number" step="0.1" class="form-control" placeholder="Введите курс доллара" name="dollar" value="{{ old('dollar') }}">
         </div>
         <div class="mb-3">
-            <label class="form-label">Цена карго</label>
+            <label class="form-label">Цена карго $</label>
             <input type="number" class="form-control" placeholder="Введите цену карго" name="cargo" value="{{ old('cargo') }}">
         </div>
         <div class="mb-3">
-            <label class="form-label">Цена рынка</label>
+            <label class="form-label">Цена рынка ₽</label>
             <input type="number" class="form-control" placeholder="Введите цену хранения на рынке" name="market" value="{{ old('dollar') }}">
         </div>
         <div class="mb-3">
-            <label class="form-label">Цена доставки</label>
+            <label class="form-label">Цена доставки ₽</label>
             <input type="number" class="form-control" placeholder="Введите цену доставки" name="delivery" value="{{ old('delivery') }}">
         </div>
         <div class="mb-3">
