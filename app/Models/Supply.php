@@ -3,10 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Supply extends Model
 {
     public $fillable = ['dollar', 'cargo', 'market', 'delivery', 'date'];
 
-
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class);
+    }
 }
