@@ -32,50 +32,52 @@
 
     <hr>
 
-    <form class="card card-body mb-4" method="POST" action="/supplies/{{ $supply->id }}/products">
-        @csrf
-        <div class="form-group">
-            <input
-                type="text" class="form-control"
-                placeholder="Название товара"
-                value="{{ old('name') }}"
-                name="name"
-            >
-            <input
-                type="number" class="form-control"
-                placeholder="Yuan rate"
-                step="0.1"
-                value="{{ old('yuan') }}"
-                name="yuan"
-            >
-            <input
-                type="number" class="form-control"
-                placeholder="Price"
-                value="{{ old('price') }}"
-                name="price"
-            >
-            <input
-                type="number" class="form-control"
-                placeholder="Quantity"
-                value="{{ old('quantity') }}"
-                name="quantity"
-            >
-        </div>
-        <button type="submit" class="btn btn-primary">Добавить</button>
-    </form>
-
-    <hr>
-
     @if(!$supply->completed)
-    <form action="/supplies/{{ $supply->id }}/report" method="post">
-        @csrf
-        <input type="submit" name="complete" value="Учесть" />
-    </form>
+        <form class="card card-body mb-4" method="POST" action="/supplies/{{ $supply->id }}/products">
+            @csrf
+            <div class="form-group">
+                <input
+                    type="text" class="form-control"
+                    placeholder="Название товара"
+                    value="{{ old('name') }}"
+                    name="name"
+                >
+                <input
+                    type="number" class="form-control"
+                    placeholder="Yuan rate"
+                    step="0.1"
+                    value="{{ old('yuan') }}"
+                    name="yuan"
+                >
+                <input
+                    type="number" class="form-control"
+                    placeholder="Price"
+                    value="{{ old('price') }}"
+                    name="price"
+                >
+                <input
+                    type="number" class="form-control"
+                    placeholder="Quantity"
+                    value="{{ old('quantity') }}"
+                    name="quantity"
+                >
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </form>
+
+        <hr>
+
+        @if(count($supply->products) > 0)
+            <form action="/supplies/{{ $supply->id }}/report" method="post">
+                @csrf
+                <input type="submit" name="complete" value="Учесть" />
+            </form>
+        @endif
+
+        <br>
+
+        <a href="/supplies/{{ $supply->id }}/edit" class="btn btn-light">Изменить данные о поставке</a>
     @endif
-
-    <br>
-
-    <a href="/supplies/{{ $supply->id }}/edit" class="btn btn-light">Изменить данные о поставке</a>
 
     <br>
 

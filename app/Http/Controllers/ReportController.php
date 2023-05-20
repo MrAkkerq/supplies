@@ -30,7 +30,7 @@ class ReportController extends Controller
 
         $priceForDeliveryByOneProductInSupply = round($supplyPrice / $productsQuantityInSupply->count, 2);
 
-        $products = Product::get();
+        $products = Product::where('supply_id', $supply->id)->get();
 
         foreach ($products as $product)
         {
