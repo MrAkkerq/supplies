@@ -13,4 +13,9 @@ class Supply extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    public function addProduct($attributes)
+    {
+        return $this->products()->create($attributes);
+    }
 }
