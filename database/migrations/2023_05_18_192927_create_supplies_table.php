@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->integer('market');
             $table->integer('delivery');
             $table->date('date');
+            $table->boolean('completed')->default(false);
             $table->timestamps();
         });
     }

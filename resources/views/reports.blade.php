@@ -1,12 +1,12 @@
 <table>
-    <caption>Отчет</caption>
+    <h1>Отчет</h1>
+
+    <p>Дата поставки 22.02.2022</p>
     <tr>
         <th>Наименование товара</th>
         <th>Цена на за единицу</th>
     </tr>
 
     <tr><td>O 1</td><td>21.79</td>
-    <tr><td>O 2</td><td>21.79</td>
-    <tr><td>NewF1</td><td>58.54</td>
     <tr><td>NewF1</td><td>58.54</td>
 </table>

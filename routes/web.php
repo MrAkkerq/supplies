@@ -24,3 +24,5 @@ Route::post('/supplies/{supply}/products', 'App\Http\Controllers\ProductControll
 Route::get('/reports', function() {
     return view('reports');
 });
+
+Route::resource('/reports', 'App\Http\Controllers\ReportController');

@@ -3,6 +3,12 @@
         Поставка от {{ $supply->date }}
     </h3>
 
+    @if($supply->completed)
+        Учтено
+    @else
+        Не учтено
+    @endif
+
     <br>
 
     <p>Курс доллара = {{ $supply->dollar }} ₽</p>
@@ -60,10 +66,17 @@
 
     <hr>
 
-    <a href="/supplies" class="btn btn-primary">Вернуться к списку поставок</a>
+    <form action="/reports" method="post">
+        @csrf
+        <input type="submit" name="complete" value="Учесть" />
+    </form>
 
     <br>
 
-    <a href="/supplies/{{ $supply->id }}/edit" class="btn btn-light">Изменить</a>
+    <a href="/supplies/{{ $supply->id }}/edit" class="btn btn-light">Изменить данные о поставке</a>
+
+    <br>
+
+    <a href="/supplies" class="btn btn-primary">Вернуться к списку поставок</a>
 
 </div>
