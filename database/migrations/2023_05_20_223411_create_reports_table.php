@@ -9,6 +9,7 @@ return new class extends Migration {
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->float('price');
             $table->integer('supply_id');
             $table->string('product_id');

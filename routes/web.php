@@ -21,8 +21,8 @@ Route::resource('/supplies', 'App\Http\Controllers\SuppliesController');
 
 Route::post('/supplies/{supply}/products', 'App\Http\Controllers\ProductController@store');
 
-Route::get('/reports', function() {
-    return view('reports');
-});
+//Route::get('/reports', function() {
+//    return view('reports');
+//});
 
-Route::resource('/reports', 'App\Http\Controllers\ReportController');
+Route::post('/supplies/{supply}/report', 'App\Http\Controllers\ReportController@addReportToSupply');

@@ -66,7 +66,7 @@
 
     <hr>
 
-    <form action="/reports" method="post">
+    <form action="/supplies/{{ $supply->id }}/report" method="post">
         @csrf
         <input type="submit" name="complete" value="Учесть" />
     </form>
