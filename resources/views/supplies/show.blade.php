@@ -38,6 +38,7 @@
             <input
                 type="number" class="form-control"
                 placeholder="Yuan rate"
+                step="0.1"
                 value="{{ old('yuan') }}"
                 name="yuan"
             >
