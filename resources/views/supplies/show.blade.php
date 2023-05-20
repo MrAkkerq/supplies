@@ -66,10 +66,12 @@
 
     <hr>
 
+    @if(!$supply->completed)
     <form action="/supplies/{{ $supply->id }}/report" method="post">
         @csrf
         <input type="submit" name="complete" value="Учесть" />
     </form>
+    @endif
 
     <br>
 

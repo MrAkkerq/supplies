@@ -19,8 +19,10 @@ class Report extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public function supply(): HasOneThrough
+    public function supply(): BelongsTo
     {
-        return $this->hasOneThrough(Supply::class, Product::class);
+//        return $this->hasOneThrough(Supply::class, Product::class, 'id', 'id');
+        return $this->belongsTo(Supply::class);
+
     }
 }

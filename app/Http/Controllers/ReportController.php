@@ -19,6 +19,7 @@ class ReportController extends Controller
     {
 //        dd($supply);
 //        $supply->completed = 1;
+        $supply->update(['completed' => true]);
 
         $supplyPrice = $supply->dollar * $supply->cargo + $supply->market + $supply->delivery;
 
@@ -45,6 +46,13 @@ class ReportController extends Controller
 
         return back();
 
+    }
+
+    public function test()
+    {
+        $reports = Report::all();
+
+        return view('reports', compact('reports'));
     }
 
 //    public function show(Report $report)

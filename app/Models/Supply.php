@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Supply extends Model
 {
-    public $fillable = ['dollar', 'cargo', 'market', 'delivery', 'date'];
+    public $fillable = ['dollar', 'cargo', 'market', 'delivery', 'date', 'completed'];
 
     public function products(): HasMany
     {
