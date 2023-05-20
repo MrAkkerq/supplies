@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::resource('/supplies', 'App\Http\Controllers\SuppliesController');
 
 Route::post('/supplies/{supply}/products', 'App\Http\Controllers\ProductController@store');
+
+Route::get('/reports', function() {
+    return view('reports');
+});
