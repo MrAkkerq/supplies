@@ -26,4 +26,4 @@ Route::post('/supplies/{supply}/products', 'App\Http\Controllers\ProductControll
 //});
 
 Route::post('/supplies/{supply}/report', 'App\Http\Controllers\ReportController@addReportToSupply');
-Route::get('/reports', 'App\Http\Controllers\ReportController@test');
+Route::get('/reports', 'App\Http\Controllers\ReportController@index');

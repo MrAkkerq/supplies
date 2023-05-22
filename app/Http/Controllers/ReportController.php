@@ -48,11 +48,11 @@ class ReportController extends Controller
 
     }
 
-    public function test()
+    public function index()
     {
         $reports = Report::all();
 
-        return view('reports', compact('reports'));
+        return view('reports.index', compact('reports'));
     }
 
 //    public function show(Report $report)
