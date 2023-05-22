@@ -21,13 +21,14 @@
     <h3>Список товаров</h3>
 
     @if($supply->products->isNotEmpty())
-        <ul class="list-group">
+        <!-- <ul class="list-group">
             @foreach($supply->products as $product)
                 <li class="list-group-item">
                     {{ $product->name }}
                 </li>
             @endforeach
-        </ul>
+        </ul> -->
+        @include('products.index', ['products' => $supply->products])
     @endif
 
     <hr>

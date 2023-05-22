@@ -2,6 +2,7 @@
     <h3 class="pb-4 mb-4 fst-italic border-bottom">
         Отчет
     </h3>
+    <a href="/supplies">Поставки</a> 
     <table class="table table-striped">
         <tr>
             <th scope="col">Дата поставки</th>

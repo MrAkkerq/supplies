@@ -25,6 +25,6 @@
             <label class="form-label">Дата поставки</label>
             <input type="date" class="form-control" placeholder="Введите дату поставки" name="date" value="{{ old('date') }}">
         </div>
-        <button type="submit" class="btn btn-primary">Создать поставка</button>
+        <button type="submit" class="btn btn-primary">Создать поставку</button>
     </form>
 </div>

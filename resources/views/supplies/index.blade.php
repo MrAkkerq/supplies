@@ -7,4 +7,6 @@
     <br>
 
     <a class="p-2 link-secondary" href="/supplies/create">Создать поставку</a>
+    <a class="p-2 link-secondary" href="/reports">Отчеты по поставкам</a>
+
 </div>
