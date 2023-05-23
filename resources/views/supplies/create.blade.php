@@ -7,7 +7,7 @@
         @csrf
         <div class="mb-3">
             <label class="form-label">Курс доллара ₽</label>
-            <input type="number" step="0.1" class="form-control" placeholder="Введите курс доллара" name="dollar" value="{{ old('dollar') }}">
+            <input type="number" step="0.01" class="form-control" placeholder="Введите курс доллара" name="dollar" value="{{ old('dollar') }}">
         </div>
         <div class="mb-3">
             <label class="form-label">Цена карго $</label>

@@ -13,6 +13,8 @@ return new class extends Migration {
             $table->float('price');
             $table->integer('supply_id');
             $table->string('product_id');
+            $table->float('product_price');
+            $table->float('delivery_price');
             $table->timestamps();
         });
     }

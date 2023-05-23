@@ -18,4 +18,9 @@ class Supply extends Model
     {
         return $this->products()->create($attributes);
     }
+
+    public function getPrice(): float
+    {
+    	return $this->dollar * $this->cargo + $this->market + $this->delivery;
+    }
 }

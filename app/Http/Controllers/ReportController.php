@@ -15,20 +15,18 @@ class ReportController extends Controller
 //        return Report::all();
 //    }
 
-    public function addReportToSupply(Supply $supply, Report $report)
+    public function addReportToSupply(Supply $supply, Report $report, Product $product)
     {
 //        dd($supply);
 //        $supply->completed = 1;
         $supply->update(['completed' => true]);
 
-        $supplyPrice = $supply->dollar * $supply->cargo + $supply->market + $supply->delivery;
+        // $productsQuantityInSupply = DB::table('products')
+        //     ->where('supply_id', $supply->id)
+        //     ->selectRaw('sum(products.quantity) as sum')
+        //     ->first();
 
-        $productsQuantityInSupply = DB::table('products')
-            ->where('supply_id', $supply->id)
-            ->selectRaw('sum(products.quantity) as count')
-            ->first();
-
-        $priceForDeliveryByOneProductInSupply = round($supplyPrice / $productsQuantityInSupply->count, 2);
+        $priceForDeliveryByOneProductInSupply = round($supply->getPrice() / $product->getProductQuantityInSupply($supply->id), 2);
 
         $products = Product::where('supply_id', $supply->id)->get();
 
@@ -39,7 +37,9 @@ class ReportController extends Controller
                 'name' => $product->name,
                 'price' => $productPrice + $priceForDeliveryByOneProductInSupply,
                 'supply_id' => $supply->id,
-                'product_id' => $product->id
+                'product_id' => $product->id,
+                'product_price' => $productPrice,
+                'delivery_price' => $priceForDeliveryByOneProductInSupply
             ];
             $report->create($attribute);
         }

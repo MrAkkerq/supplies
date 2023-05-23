@@ -12,7 +12,7 @@ class Report extends Model
 //    {
 //        return $this->belongsTo(Supply::class);
 //    }
-    public $fillable = ['name', 'price', 'supply_id', 'product_id'];
+    public $fillable = ['name', 'price', 'supply_id', 'product_id', 'product_price', 'delivery_price'];
 
     public function product(): BelongsTo
     {
