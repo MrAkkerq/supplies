@@ -17,6 +17,7 @@
     <script src={{ mix("/js/app.js") }}></script>
 </head>
 <body>
+    @include('layout.nav')
     @yield('content')
 </body>
 </html>

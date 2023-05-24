@@ -1,4 +1,4 @@
-<article class="blog-post">
+<div class="container">
     <h2 class="blog-post-title mb-1">
         <a href="/supplies/{{ $supply->id }}">
             Поставка от {{ $supply->date }}
@@ -10,5 +10,5 @@
         @endif
     </h2>
 
-</article>
+</div>
 

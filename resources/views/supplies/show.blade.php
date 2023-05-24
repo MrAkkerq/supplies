@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-<div class="col-md-8">
+<div class="container">
     <h3 class="pb-4 mb-4 fst-italic border-bottom">
         Поставка от {{ $supply->date }}
     </h3>

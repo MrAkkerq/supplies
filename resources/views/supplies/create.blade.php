@@ -1,4 +1,4 @@
-<div class="col-md-8" xmlns="http://www.w3.org/1999/html">
+<div class="container">
     <h3 class="pb-4 mb-4 fst-italic border-bottom">
         Создание поставки
     </h3>
