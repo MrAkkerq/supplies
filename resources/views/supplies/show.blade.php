@@ -42,12 +42,14 @@
         <form class="card card-body mb-4" method="POST" action="/supplies/{{ $supply->id }}/products">
             @csrf
             <div class="form-group">
-                <input
-                    type="text" class="form-control"
-                    placeholder="Название товара"
-                    value="{{ old('name') }}"
-                    name="name"
-                >
+                <select class="form-select" name="name">
+                  <option value="Zozu кушон">Zozu кушон</option>
+                  <option value="Zozu патчи">Zozu патчи</option>
+                  <option value="Jomtam основа">Jomtam основа</option>
+                  <option value="Jomtam патчи">Jomtam патчи</option>
+                  <option value="O'CHEAL face">O'CHEAL face</option>
+                  <option value="Yangmei консилер">Yangmei консилер</option>
+                </select>
                 <input
                     type="number" class="form-control"
                     placeholder="Yuan rate"
