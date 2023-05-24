@@ -28,12 +28,11 @@
         </tr>
     </table>
 
-    <hr>
-
-    <h3>Список товаров</h3>
-
     @if($supply->products->isNotEmpty())
+        <h3>Список товаров</h3>
         @include('products.index', ['products' => $supply->products])
+    @else
+        <h3>Нет товаров в поставке</h3>
     @endif
 
     <hr>

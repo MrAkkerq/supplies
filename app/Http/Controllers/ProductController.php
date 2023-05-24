@@ -23,4 +23,11 @@ class ProductController extends Controller
 
         return back();
     }
+
+    public function destroy(Supply $supply, Product $product)
+    {
+        $product->delete();
+
+        return redirect('/supplies/{supply}');
+    }
 }
