@@ -1,33 +1,38 @@
+@extends('layout.master')
+@section('content')
 <div class="col-md-8">
     <h3 class="pb-4 mb-4 fst-italic border-bottom">
         Поставка от {{ $supply->date }}
     </h3>
 
     @if($supply->completed)
-        Учтено
+        <p>Учтено</p>
     @else
-        Не учтено
+        <p>Не учтено</p>
     @endif
 
     <br>
 
-    <p>Курс доллара = {{ $supply->dollar }} ₽</p>
-    <p>Стоимость карго = {{ $supply->cargo }} $</p>
-    <p>Стоимость хранения на рынке = {{ $supply->market }} ₽</p>
-    <p>Стоимость доставки = {{ $supply->delivery }} ₽</p>
+    <table class="table table-striped">
+        <tr>
+            <th scope="col">Курс доллара</th>
+            <th scope="col">Стоимость карго</th>
+            <th scope="col">Стоимость хранения на рынке</th>
+            <th scope="col">Стоимость доставки</th>
+        </tr>
+        <tr>
+            <td>{{ $supply->dollar }} ₽</td>
+            <td>{{ $supply->cargo }} $</td>
+            <td>{{ $supply->market }} ₽</td>
+            <td>{{ $supply->delivery }} ₽</td>
+        </tr>
+    </table>
 
     <hr>
 
     <h3>Список товаров</h3>
 
     @if($supply->products->isNotEmpty())
-        <!-- <ul class="list-group">
-            @foreach($supply->products as $product)
-                <li class="list-group-item">
-                    {{ $product->name }}
-                </li>
-            @endforeach
-        </ul> -->
         @include('products.index', ['products' => $supply->products])
     @endif
 
@@ -85,3 +90,4 @@
     <a href="/supplies" class="btn btn-primary">Вернуться к списку поставок</a>
 
 </div>
+@endsection()
