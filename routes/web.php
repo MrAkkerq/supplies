@@ -19,17 +19,18 @@ Route::get('/', function () {
 
 Route::resource('/supplies', 'App\Http\Controllers\SuppliesController');
 
-Route::post('/supplies/{supply}/products', 'App\Http\Controllers\ProductController@store');
-
 
 Route::post('/supplies/{supply}/report', 'App\Http\Controllers\ReportController@addReportToSupply');
+
 Route::get('/reports', 'App\Http\Controllers\ReportController@index');
 
-Route::delete('/products/{product}', 'App\Http\Controllers\ProductController@destroy');
+Route::post('/supplies/{supply}/products/{product}', 'App\Http\Controllers\ProductController@store');
 
-Route::get('/products/{product}/edit', 'App\Http\Controllers\ProductController@edit');
+Route::delete('/supplies/{supply}/products/{product}', 'App\Http\Controllers\ProductController@destroy');
 
-Route::patch('/products/{product}', 'App\Http\Controllers\ProductController@update');
+Route::get('/supplies/{supply}/products/{product}/edit', 'App\Http\Controllers\ProductController@edit');
+
+Route::patch('/supplies/{supply}/products/{product}', 'App\Http\Controllers\ProductController@update');
 
 Auth::routes();
 

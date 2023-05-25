@@ -5,7 +5,7 @@
             Редактирование товара
         </h3>
 
-        <form method="POST" action="/products/{{ $product->id }}">
+        <form method="POST" action="supplies/{{ $product->supply->id }}/products/{{ $product->id }}">
             @csrf
             @method('PATCH')
             <div class="form-group">
@@ -45,6 +45,11 @@
             <br>
 
             <button type="submit" class="btn btn-primary">Изменить</button>
+        </form>
+        <form method="POST" action="/products/{{ $product->id }}">
+        @csrf
+        @method('DELETE')
+            <button type="submit" class="btn btn-danger">Удалить</button>
         </form>
  </div>
 @endsection()

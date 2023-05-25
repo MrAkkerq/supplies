@@ -1,4 +1,4 @@
-<form class="card card-body mb-4" method="POST" action="/supplies/{{ $supply->id }}/products">
+<form class="card card-body mb-4" method="POST" action="/supplies/{{ $supply->id }}/products/">
             @csrf
             <div class="form-group">
                 <label class="form-label">Наименование товара</label>

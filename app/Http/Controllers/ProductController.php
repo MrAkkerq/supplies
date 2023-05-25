@@ -24,7 +24,7 @@ class ProductController extends Controller
         return back();
     }
 
-    public function edit(Product $product)
+    public function edit(Supply $supply, Product $product)
     {
         return view('products.edit', compact('product'));
     }
@@ -47,6 +47,6 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        return back();
+        return redirect('/supplies/{supply}');
     }
 }
