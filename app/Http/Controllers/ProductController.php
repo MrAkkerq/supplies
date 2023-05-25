@@ -29,7 +29,7 @@ class ProductController extends Controller
         return view('products.edit', compact('product'));
     }
 
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Supply $supply, Product $product, )
     {
         $attributes = $request->validate([
             'name' => ['required'],
@@ -40,13 +40,13 @@ class ProductController extends Controller
 
         $product->update($attributes);
 
-        return redirect('/supplies');
+        return redirect("/supplies/{$supply->id}");
     }
 
     public function destroy(Supply $supply, Product $product)
     {
         $product->delete();
 
-        return redirect('/supplies/{supply}');
+        return redirect("/supplies/{$supply->id}");
     }
 }

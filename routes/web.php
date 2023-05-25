@@ -24,7 +24,7 @@ Route::post('/supplies/{supply}/report', 'App\Http\Controllers\ReportController@
 
 Route::get('/reports', 'App\Http\Controllers\ReportController@index');
 
-Route::post('/supplies/{supply}/products/{product}', 'App\Http\Controllers\ProductController@store');
+Route::post('/supplies/{supply}/products', 'App\Http\Controllers\ProductController@store');
 
 Route::delete('/supplies/{supply}/products/{product}', 'App\Http\Controllers\ProductController@destroy');
 
