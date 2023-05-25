@@ -46,7 +46,7 @@ class SuppliesController extends Controller
 
     public function update(Request $request, Supply $supply)
     {
-        $attribute = $request->validate([
+        $attributes = $request->validate([
             'dollar' => ['required', 'numeric'],
             'cargo' => ['required', 'integer'],
             'market' => ['required', 'integer'],
@@ -54,7 +54,7 @@ class SuppliesController extends Controller
             'date' => ['required', 'date'],
         ]);
 
-        $supply->update($attribute);
+        $supply->update($attributes);
 
         return redirect('/supplies');
     }

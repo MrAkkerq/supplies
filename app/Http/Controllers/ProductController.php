@@ -24,6 +24,25 @@ class ProductController extends Controller
         return back();
     }
 
+    public function edit(Product $product)
+    {
+        return view('products.edit', compact('product'));
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $attributes = $request->validate([
+            'name' => ['required'],
+            'yuan' => ['required', 'numeric'],
+            'price' => ['required', 'integer'],
+            'quantity' => ['required', 'integer'],
+        ]);
+
+        $product->update($attributes);
+
+        return redirect('/supplies');
+    }
+
     public function destroy(Supply $supply, Product $product)
     {
         $product->delete();

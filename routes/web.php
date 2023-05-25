@@ -27,6 +27,10 @@ Route::get('/reports', 'App\Http\Controllers\ReportController@index');
 
 Route::delete('/products/{product}', 'App\Http\Controllers\ProductController@destroy');
 
+Route::get('/products/{product}/edit', 'App\Http\Controllers\ProductController@edit');
+
+Route::patch('/products/{product}', 'App\Http\Controllers\ProductController@update');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
