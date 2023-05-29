@@ -12,7 +12,6 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->float('price');
-            //$table->integer('supply_id');
 
             $table->foreignIdFor(Supply::class)
                 ->constrained()
