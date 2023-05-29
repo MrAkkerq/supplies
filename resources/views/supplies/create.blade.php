@@ -8,19 +8,19 @@
     <form class="card card-body mb-4" method="POST" action="/supplies">
         @csrf
         <div class="form-group">
-            <label class="form-label">Курс доллара</label>
+            <label class="form-label">Курс доллара, ₽</label>
             <input type="number" step="0.01" class="form-control" placeholder="Введите курс доллара в ₽" name="dollar" value="{{ old('dollar') }}">
         </div>
         <div class="form-group">
-            <label class="form-label">Цена карго</label>
+            <label class="form-label">Цена карго, $</label>
             <input type="number" step="0.1" class="form-control" placeholder="Введите цену карго в $" name="cargo" value="{{ old('cargo') }}">
         </div>
         <div class="form-group">
-            <label class="form-label">Цена рынка</label>
+            <label class="form-label">Цена рынка, ₽</label>
             <input type="number" class="form-control" placeholder="Введите цену хранения на рынке в  ₽" name="market" value="{{ old('market') }}">
         </div>
         <div class="form-group">
-            <label class="form-label">Цена доставки</label>
+            <label class="form-label">Цена доставки, ₽</label>
             <input type="number" class="form-control" placeholder="Введите цену доставки в ₽" name="delivery" value="{{ old('delivery') }}">
         </div>
         <div class="form-group">

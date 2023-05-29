@@ -46,6 +46,9 @@
 
             <button type="submit" class="btn btn-primary">Изменить</button>
         </form>
+
+        <br>
+
         <form method="POST" action="/supplies/{{ $product->supply->id }}/products/{{ $product->id }}">
         @csrf
         @method('DELETE')

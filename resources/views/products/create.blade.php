@@ -10,7 +10,7 @@
                   <option value="O'CHEAL face">O'CHEAL face</option>
                   <option value="Yangmei консилер">Yangmei консилер</option>
                 </select>
-                <label class="form-label">Курс юаня</label>
+                <label class="form-label">Курс юаня, ₽</label>
                 <input
                     type="number" class="form-control"
                     placeholder="Введите курс юаня в ₽"
@@ -18,14 +18,14 @@
                     value="{{ old('yuan') }}"
                     name="yuan"
                 >
-                <label class="form-label">Цена</label>
+                <label class="form-label">Цена товаров, ¥</label>
                 <input
                     type="number" class="form-control"
                     placeholder="Введите цену в ¥"
                     value="{{ old('price') }}"
                     name="price"
                 >
-                <label class="form-label">Количество</label>
+                <label class="form-label">Количество товаров, шт</label>
                 <input
                     type="number" class="form-control"
                     placeholder="Введите количество"

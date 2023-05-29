@@ -15,16 +15,16 @@
 
     <table class="table table-striped">
         <tr>
-            <th scope="col">Курс доллара</th>
-            <th scope="col">Стоимость карго</th>
-            <th scope="col">Стоимость хранения на рынке</th>
-            <th scope="col">Стоимость доставки</th>
+            <th scope="col">Курс доллара, ₽</th>
+            <th scope="col">Стоимость карго, $</th>
+            <th scope="col">Стоимость хранения на рынке, ₽</th>
+            <th scope="col">Стоимость доставки, ₽</th>
         </tr>
         <tr>
-            <td>{{ $supply->dollar }} ₽</td>
-            <td>{{ $supply->cargo }} $</td>
-            <td>{{ $supply->market }} ₽</td>
-            <td>{{ $supply->delivery }} ₽</td>
+            <td>{{ $supply->dollar }}</td>
+            <td>{{ $supply->cargo }}</td>
+            <td>{{ $supply->market }}</td>
+            <td>{{ $supply->delivery }}</td>
         </tr>
     </table>
 
@@ -49,12 +49,10 @@
             </form>
         @endif
 
+        <a href="/supplies/{{ $supply->id }}/edit" class="btn btn-warning">Изменить данные о поставке</a>
+
         <br>
-
-        <a href="/supplies/{{ $supply->id }}/edit" class="btn btn-light">Изменить данные о поставке</a>
     @endif
-
-    <br>
 
     @if($supply->completed)
         <form method="POST" action="/supplies/{{ $supply->id }}">
@@ -62,6 +60,8 @@
         @method('DELETE')
             <button type="submit" class="btn btn-danger">Удалить</button>
         </form>
+
+        <br>
     @endif()
 
     <a href="/supplies" class="btn btn-primary">Вернуться к списку поставок</a>

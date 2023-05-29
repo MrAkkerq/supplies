@@ -33,7 +33,9 @@
 
             <button type="submit" class="btn btn-primary">Изменить</button>
         </form>
+
         <br>
+        
         <form method="POST" action="/supplies/{{ $supply->id }}">
         @csrf
         @method('DELETE')
