@@ -56,6 +56,14 @@
 
     <br>
 
+    @if($supply->completed)
+        <form method="POST" action="/supplies/{{ $supply->id }}">
+        @csrf
+        @method('DELETE')
+            <button type="submit" class="btn btn-danger">Удалить</button>
+        </form>
+    @endif()
+
     <a href="/supplies" class="btn btn-primary">Вернуться к списку поставок</a>
 
 </div>
