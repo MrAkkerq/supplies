@@ -30,7 +30,7 @@
 
     @if($supply->products->isNotEmpty())
         <h3>Список товаров</h3>
-        @include('products.index', ['products' => $supply->products])
+        @include('products.index', ['products' => $supply->products, 'supply' => $supply])
     @else
         <h3>Нет товаров в поставке</h3>
     @endif

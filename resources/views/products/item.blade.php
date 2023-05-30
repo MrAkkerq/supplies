@@ -1,9 +1,9 @@
 <li class="list-group-item">
     {{ $product->name }}
-    {{ $product->price * $product->yuan }} ₽
-    {{ $product->quantity }} шт.
+    {{ $product->pivot->price * $product->pivot->yuan }} ₽
+    {{ $product->pivot->quantity }} шт.
 
-    @if(!$product->supply->completed)
-        <a href="/supplies/{{ $product->supply->id }}/products/{{ $product->id }}/edit" class="btn btn-light">Изменить</a>
-    @endif()
+{{--    @if(!$product->supply->completed)--}}
+{{--        <a href="/supplies/{{ $product->supply->id }}/products/{{ $product->id }}/edit" class="btn btn-light">Изменить</a>--}}
+{{--    @endif()--}}
 </li>
